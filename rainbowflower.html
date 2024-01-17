@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rainbowflower</title>
+    <style>
+        @keyframes rainbow1{
+            0% {background-color: red;}
+            25%{background-color: green;}
+            50% {background-color: blue;}
+            75% {background-color: magenta;}
+            100% {background-color: red;}
+        }
+        @keyframes rainbow2{
+            0% {background-color: green;}
+            25%{background-color: blue;}
+            50% {background-color: magenta;}
+            75% {background-color: red;}
+            100% {background-color: green;}
+        }
+        @keyframes rainbow3{
+            0% {background-color: blue;}
+            25%{background-color: magenta;}
+            50% {background-color: red;}
+            75% {background-color: green;}
+            100% {background-color: blue;}
+        }
+        @keyframes rainbow4{
+            0% {background-color: magenta;}
+            25%{background-color: red;}
+            50% {background-color: green;}
+            75% {background-color: blue;}
+            100% {background-color: magenta;}
+        }
+        .flower{
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+
+            border: 6px outset aqua;
+
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+
+            text-align: center;
+            font-size: 25px;
+            color: white;
+            position: absolute;
+            padding: 15px;
+            margin: auto;
+            line-height: 100px;
+        }
+        #flower1{
+            animation-name: rainbow1;
+
+            border-radius: 0px 80px 0px 80px;
+
+            top: 10px;
+            left: 10px;
+        }
+        #flower2{
+            animation-name: rainbow2;
+
+            border-radius: 80px 0px 80px 0px;
+
+            top: 160px;
+            left: 10px;
+        }
+        #flower3{
+            animation-name: rainbow3;
+
+            border-radius: 0px 80px 0px 80px;
+
+            top: 160px;
+            left: 160px;
+        }
+        #flower4{
+            animation-name: rainbow4;
+
+            border-radius: 80px 0px 80px 0px;
+
+            top: 10px;
+            left: 160px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flower" id="flower1"><b>HTML</b></div>
+    <div class="flower" id="flower2"><b>JS</b></div>
+    <div class="flower" id="flower3"><b>WEB</b></div>
+    <div class="flower" id="flower4"><b>CSS</b></div>
+
+</body>
+</html>
