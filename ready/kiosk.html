@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang = "en">
+  
+<head>
+  <meta charset="UTF-8">
+  <title>기말고사 1번</title>
+</head>
+<style>
+  body { text-align : center;}
+  thead {background-color: yellow;}
+  
+</style>
+<body>
+  <h2>홍길동의 카페메뉴</h2>
+  <img src="./media/americano.jpg" id="countBtn_americano" width ="280", height = "300">
+  <img src="./media/cafe latte.jpg" id="countBtn_caffelatte" width ="280", height = "300">
+  <img src="./media/cappuccino.jpg" id ="countBtn_cappucino" width ="280", height = "300">
+
+  <div>
+    <td id ='countBtn_americano' onclick="increase();"></td>
+  </div>
+
+  <table align = "center">
+    <tr>
+      <td><button type = "button" id = "decrease_amricano" onclick="decrease('americano')">-</button></td>
+      <td>아메리카노<button type = "button" id = "countBtn_americano" onclick="increase('americano')">+</button></td>
+
+      <td><button type = "button" id = "decrease_caffelatte" onclick="decrease('caffelatte')">-</button></td>
+      <td>카페라떼<button type = "button" id = "countBtn_caffelatte" onclick="increase('caffelatte')">+</button></td>
+
+      <td><button type = "button" id = "decrease_cappuccino" onclick="decrease('cappuccino')">-</button></td>
+      <td>카푸치노<button type = "button" id = "increase_cappuccino" onclick="increase('cappuccino')">+</button></td>
+    </tr>
+  </table>
+  <table align = "center">
+    <thead align="center">
+      <tr>
+        <td width = "150">메뉴</td>
+        <td width = "150">단가</td>
+        <td width = "150">수량</td>
+        <td width = "150">합계</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>아메리카노</td>
+        <td>₩2,500</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>카페라떼</td>
+        <td>₩3,000</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>카푸치노</td>
+        <td>₩3,000</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td rowspan = "2">총합계</td>
+        <td> </td>
+        <td> </td>
+      </tr>
+
+    </tbody>
+  </table>
+  <script>
+    var prices = {
+        americano: 2500,
+        caffelatte: 3000,
+        cappuccino: 3000
+    };
+
+    function increase(menu) {
+        var quantityElement = document.querySelector("#quantity_" + menu);
+        var totalElement = document.querySelector("#total_" + menu);
+
+        var quantity = parseInt(quantityElement.textContent);
+        quantity++;
+        quantityElement.textContent = quantity;
+
+        var price = prices[menu];
+        var total = quantity * price;
+        totalElement.textContent = "₩" + total;
+
+        calculateTotal();
+    }
+
+    function decrease(menu) {
+        var quantityElement = document.querySelector("#quantity_" + menu);
+        var totalElement = document.querySelector("#total_" + menu);
+
+        var quantity = parseInt(quantityElement.textContent);
+        if (quantity > 0) {
+            quantity--;
+            quantityElement.textContent = quantity;
+
+            var price = prices[menu];
+            var total = quantity * price;
+            totalElement.textContent = "₩" + total;
+
+            calculateTotal();
+        }
+    }
+
+    function calculateTotal() {
+        var total_americano = parseInt(document.querySelector("#total_americano").textContent.slice(1));
+        var total_caffelatte = parseInt(document.querySelector("#total_caffelatte").textContent.slice(1));
+        var total_cappuccino = parseInt(document.querySelector("#total_cappuccino").textContent.slice(1));
+
+        var totalSum = total_americano + total_caffelatte + total_cappuccino;
+
+        document.querySelector("#total_sum").textContent = "₩" + totalSum;
+    }
+</script>
+   <button type="reset" style="width: 120px;">취소</button>
+   <button type="submit" style="width: 120px;">주문</button>
+</body>
+</html>

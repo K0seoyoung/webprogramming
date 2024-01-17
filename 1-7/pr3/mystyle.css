@@ -1,0 +1,45 @@
+/*background image로 repeat 상하좌우패턴*/
+body {background-image: url("media/back.avif");
+    background-size: 100px 100px;
+    background-position: center center;
+    background-repeat: repeat;}
+
+/* 제목 빨강색 지정하고 화려한 웹폰트(독도)로 지정하기 */
+h2 {text-align: left;color :#FF0000;
+    font-family: 'Dokdo', cursive;} 
+
+/* 첨부된 모든 이미지에 groove테두리와 흐릿한 그림자 추가하기 */
+div.imgbox{
+    border: 15px groove #000000;
+    box-shadow: 5px 5px 20px #800080;
+}
+
+/* 시간표 내용마다 고유한 컬러 지정하기 */
+.timetable td, .timetable th{
+    padding: 10px;
+    text-align: center;
+}
+.timeAndWeek{
+    background-color: #FFFF00;
+}
+.database{
+    background-color: #FFB885;
+}
+.algorithm{
+    background-color: #A4CAEB;
+}
+.operatingsystem{
+    background-color: #ADDBCE;
+}
+.compiler{
+    background-color: #CDB6E0;
+}
+.networking{
+    background-color: #E8C1D9;
+}
+.SWproject{
+    background-color: #fd8993;
+}
+.webprogramming{
+    background-color: #FFCE73;
+}

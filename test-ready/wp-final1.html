@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기말고사1번</title>
+    <script>
+        const inch = 1;
+        const mm = 
+        function convert(){
+            let inSelect = document.getElementById("input_mm")
+            let outSelect = document.getElementById("input_inch")
+        }
+        if (inUnit == "m") {
+            if (outUnit == "cm") outNum.value = inNum * 100;
+            if (outUnit == "mm") outNum.value = inNum * 1000;
+            if (outUnit == "inch") outNum.value = inNum * 39.3701;
+            } else if (inUnit == "cm") {
+            if (outUnit == "m") outNum.value = inNum * 0.01;
+            if (outUnit == "mm") outNum.value = inNum * 10;
+            if (outUnit == "inch") outNum.value = inNum * 0.393701;
+            } else if (inUnit == "mm") {
+            if (outUnit == "m") outNum.value = inNum * 0.001;
+            if (outUnit == "cm") outNum.value = inNum * 0.1;
+            if (outUnit == "inch") outNum.value = inNum * 0.03937;
+            } else if (inUnit == "inch") {
+            if (outUnit == "m") outNum.value = inNum * 0.0254;
+            if (outUnit == "cm") outNum.value = inNum * 2.54;
+            if (outUnit == "mm") outNum.value = inNum * 25.4;
+        }
+        
+
+    </script>
+</head>
+<body>
+    <p>학번: 202104473 이름: 고서영</p>
+    <h2>기말시험 1. 단위변환</h2>
+    <form>
+        <input type = "text" name="mm" style = "width: 150px; font-size: 14pt; border-radius: 5px; background-color: yellow;" value="1"></button>
+        <select name="input_mm" style="width : 150px; font-size: 14pt; border-radius: 5px; background-color: cyan;" >
+            <option value="mm" selected>밀리미터(mm)</option>
+            <option value="cm">센티미터(cm)</option>
+            <option value="m">미터(m)</option>
+            <option value="km">킬로미터(km)</option>
+            <option value="in">인치(in)</option>
+            <option value="ft">피트(ft)</option>
+            <option value="yd">야드(yd)</option>
+            <option value="mile">마일(mile)</option>
+        </select>
+        <input type = "text" name="inch" style = "width: 150px; font-size: 14pt; border-radius: 5px; background-color: yellow;" value="1"></button>
+        <select name="input_inch" style="width : 150px; font-size: 14pt; border-radius: 5px; background-color: cyan;" >
+            <option value="mm" >밀리미터(mm)</option>
+            <option value="cm">센티미터(cm)</option>
+            <option value="m">미터(m)</option>
+            <option value="km">킬로미터(km)</option>
+            <option value="in" selected>인치(in)</option>
+            <option value="ft">피트(ft)</option>
+            <option value="yd">야드(yd)</option>
+            <option value="mile">마일(mile)</option>
+        </select>
+        <br>
+        <table>
+            <tr>
+                <td>
+
+                </td>
+                <td><span style="color: blue;">밀리미터(mm)</span></td>
+                <td>
+                    
+                </td>
+                <td><span style="color: blue;">센티미터(cm)</span></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td><span style="color: blue;">미터(m)</span></td>
+                <td>
+
+                </td>
+                <td><span style="color: blue;">킬로미터(km)</span></td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td><span style="color: blue;">인치(in)</span></td>
+                <td>
+
+                </td>
+                <td><span style="color: blue;">피트(ft)</span></td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td><span style="color: blue;">야드(yd)</span></td>
+                <td>
+
+                </td>
+                <td><span style="color: blue;">마일(mile)</span></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

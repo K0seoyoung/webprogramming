@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>중고차 검색</title>
+</head>
+<body>
+    <script>
+        function FindCar() {
+        const carmodel = document.querySelector('input[name="carmodel"]:checked').value;
+        const color = document.querySelector('select[name="color"]').value;
+        const price = document.querySelector('select[name="price"]').value;
+
+        location.href = `http://localhost:54321/search.usedcar`;
+    }
+
+    </script>
+    <p>&lt;실습 10. 중고차 검색&gt; 학번:202104473 이름:고서영</p>
+    <h2>중고차 검색</h2>
+    <form method = "post" action="http://localhost:54321/search.usedcar">
+        <label>
+            차종 : <label><input type="radio" name="carmodel" value="전체" checked>전체</label>
+                <label><input type="radio" name="carmodel" value="그랜저">그렌저</label>
+                <label><input type="radio" name="carmodel" value="소나타">소나타</label>
+                <label><input type="radio" name="carmodel" value="아반떼">아반떼</label>
+        </label><br>
+        <label>
+            색상 : <select style="width: 180px;" name="color">
+                <option value="전체" selected>전체</option>
+                <option value="black">black</option>
+                <option value="white">white</option>
+                <option value="기타">기타</option>
+            </select>
+        </label><br>
+        <label>
+            가격 : <select style="width: 180px;" name="price">
+                <option value="전체" selected>전체</option>
+                <option value="2000만원~">2000만원~</option>
+                <option value="1000만원~1990만원">1000만원~1990만원</option>
+                <option value="~990만원">~990만원</option>
+            </select>
+        </label><br><br>
+        <input type="reset" style="width: 90px; margin-left: 40px;" value="초기화">
+        <input type="submit" style="width: 90px;" value="검색" onclick="FindCar(); submit();"><br>
+    </form>
+</body>
+</html>

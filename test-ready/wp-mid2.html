@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>중간고사 2번</title>
+
+    <style>
+        input[type=time]{
+            height: 50px;
+            width: 220px;
+            background-color: aqua;
+            color:red;
+            font-size: 25px;
+        }
+
+        input[type=time]:hover{
+            background-color: yellow;
+        }
+
+        input[type=range]{
+            width: 120px;
+        }
+
+        button[type=submit]{
+            background-color: pink;
+            border-radius: 3%;
+        }
+        
+        fieldset{
+            width: 250px;
+            border-radius: 3%;
+        }
+
+        table{
+            width: 240px;
+            table-layout:fixed;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>
+                <h2><b>알람 설정</b></h2>
+            </legend>
+            <br>
+            <table>
+            <tr>
+                <input type="time" value="06:00">
+            </tr>
+            <br>
+                <tr>
+                    <td>
+                        <label>일<br><input type="checkbox" value="일"></label>
+                    </td>
+                    <td>
+                        <label>월<br><input type="checkbox" value="월" checked></label>
+                    </td>
+                    <td>
+                        <label>화<br><input type="checkbox" value="화" checked></label>
+                    </td>
+                    <td>
+                        <label>수<br><input type="checkbox" value="수" checked></label>
+                    </td>
+                    <td>
+                        <label>목<br><input type="checkbox" value="목" checked></label>
+                    </td>
+                    <td>
+                        <label>금<br><input type="checkbox" value="금" checked></label>
+                    </td>
+                    <td>
+                        <label>토<br><input type="checkbox" value="토"></label>
+                    </td>
+                </tr>
+            <br>
+                <tr>
+                    <td colspan="3"><label>메모</label></td>
+                    <td><input type="text" size="25" value="출근하자!"></td>
+                </tr>
+            <br>
+                <tr>
+                    <td colspan="6">
+                <label>알람 사운드</label>
+                </td>
+                <td colspan="4">
+                    <select name="bell">
+                        <option value="Bell">Bell</option>
+                        <option value="Beep">Beep</option>
+                        <option value="Ding Dong">Ding Dong</option>
+                        <option value="Laser Beam">Laser Beam</option>
+                        <option value="Piano">Piano</option>
+                    </select>
+                </td>
+                </tr>
+
+            <br>
+
+            <tr>
+                <td colspan="5">
+                    <span>다시 울림</span>
+                </td>
+                <td colspan="10">
+                    <label>1회<input type="radio" name="again" value="1" checked></label>
+                    <label>2회<input type="radio" name="again" value="2"></label>
+                    <label>3회<input type="radio" name="again" value="3"></label>
+                </td>               
+            </tr>
+            <br>
+
+            <tr>
+                <td colspan="2">음량</td>
+                <td colspan="10">
+                    0<input type="range" min="0" max="30" value="20" >30
+                </td>        
+            </tr>
+            <br>
+               
+            </table>
+
+        </fieldset>
+        <br>
+        <table style="width: 325px;">
+            <tr>
+                <td colspan="4">
+                    <button type="reset">초기화</button>
+                    <button type="">취소</button>
+                </td>
+                <td colspan="2">
+                </td>
+                <td colspan="3">
+                    <button type="submit">알람 등록</button>
+                </td>
+
+            </tr>
+        </table>
+        
+
+        
+        
+
+    </form>
+    
+</body>
+</html>

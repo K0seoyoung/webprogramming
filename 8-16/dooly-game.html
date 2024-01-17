@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dooly game</title>
+    <style>
+        .score-input,
+        .step-input {
+            width: 50px;
+            height: 20px;
+            margin: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+            text-align: left;
+            display: inline-block; /* 인라인 블록으로 배치 */
+        }
+    </style>
+</head>
+<body style="width: 500px; height: 500px;">
+    <img id="dooly" src="dooly.jpg" width="100px"
+    style="position: absolute; left: 50px; top: 120px;" />
+    
+    <p>&lt;실습7. 둘리를 잡아라&gt; 학번: 202104473 이름: 고서영</p>
+    Score <input type="text" class="score-input" id="score-box" value="0">
+    Step <input type="text" class="step-input" id="step-box" value="1">
+    <script>
+        let canMove = true;
+        let score = 0;
+        let stepX = 1;
+        let stepY = 1;
+        let intervalId;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            intervalId = setInterval(moveDooly, 100);
+        });
+
+        function toggleMove() {
+            canMove = !canMove;
+            if (!canMove) {
+                clearInterval(intervalId);
+            } else {
+                intervalId = setInterval(moveDooly, 100 / stepX);
+            }
+        }
+
+        document.getElementById("dooly").addEventListener("mousedown", () => {
+            score += 10;
+            if (stepX > 0) {
+                stepX *= 2;
+            } else {
+                stepX = Math.abs(stepX) * 2;
+            }
+            if (stepY > 0) {
+                stepY *= 2;
+            } else {
+                stepY = Math.abs(stepY) * 2;
+            }
+            updateScore();
+        });
+
+        function moveDooly() {
+            let dooly = document.getElementById("dooly");
+            let mouseX = parseInt(dooly.style.left) || 0;
+            let mouseY = parseInt(dooly.style.top) || 0;
+            let maxX = window.innerWidth - dooly.clientWidth;
+            let maxY = window.innerHeight - dooly.clientHeight;
+
+            if (mouseX >= maxX || mouseX <= 0){
+                stepX *= -1;
+            }
+            if(mouseY >= maxY || mouseY <= 0){
+                stepY *= -1;
+            }
+
+            dooly.style.left = (mouseX + stepX) + "px";
+            dooly.style.top = (mouseY + stepY) + "px";
+        }
+
+        function updateScore() {
+            document.getElementById('score-box').value = score;
+            document.getElementById('step-box').value = stepX;
+        }
+
+
+
+
+    </script>
+</body>
+</html>

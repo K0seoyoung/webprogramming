@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>움직이는 글자</title>
+
+<style type="text/css">
+
+.box {
+
+display : inline-box;
+
+position : fixed;
+
+font-size : 32px;
+
+font-weight : bold;
+
+text-align : center;
+
+color : white;
+
+padding : 1%;
+
+border-radius : 100px;
+
+ 
+
+transition : transform 1s;
+
+}
+
+ 
+
+@keyframes box1animation {
+
+0%   { top : 1%; left :   1%; font-size : 12pt;  }
+
+50%  { top : 1%; left : 45%; font-size : 64pt; }
+
+100% { top : 1%; left :   1%; font-size : 12pt;  }
+
+}
+
+@keyframes box2animation {
+
+0%   { top :   1%; right : 1%;  font-size : 12pt;  }
+
+50%  { top : 45%; right : 1%;  font-size : 64pt; }
+
+100% { top :   1%; right : 1%;  font-size : 12pt;  }
+
+}
+
+@keyframes box3animation {
+
+0%   { bottom : 1%; right :   1%; font-size : 12pt;  }
+
+50%  { bottom : 1%; right : 45%; font-size : 64pt; }
+
+100% { bottom : 1%; right :   1%; font-size : 12pt;  }
+
+}
+
+@keyframes box4animation {
+
+0%   { bottom :   1%; left : 1%;  font-size : 12pt;  }
+
+50%  { bottom : 45%; left : 1%;  font-size : 64pt; }
+
+100% { bottom :   1%; left : 1%;  font-size : 12pt;  }
+
+}
+
+ 
+
+#box1 {
+
+background-color : black;
+
+animation-name : box1animation; 
+
+animation-duration : 10s;
+
+animation-iteration-count : infinite; 
+
+}
+
+#box2 {
+
+background-color : red;
+
+animation-name : box2animation; 
+
+animation-duration : 10s;
+
+animation-iteration-count : infinite;
+
+}
+
+#box3 {
+
+background-color : green;
+
+animation-name : box3animation; 
+
+animation-duration : 10s;
+
+animation-iteration-count : infinite;
+
+}
+
+#box4 {
+
+background-color : blue;
+
+animation-name : box4animation; 
+
+animation-duration : 10s;
+
+animation-iteration-count : infinite;
+
+}
+
+ 
+
+.box:hover {
+
+transform : rotate(180deg); 
+
+}
+
+</style>  
+
+</head>
+
+<body>
+
+<div class="box" id="box1">&nbsp;WWW&nbsp;</div>
+
+<div class="box" id="box2">&nbsp;HTML5&nbsp;</div>
+
+<div class="box" id="box3">&nbsp;CSS3&nbsp;</div>
+
+<div class="box" id="box4">&nbsp;JavaScript&nbsp;</div>
+
+</body>
+
+</html>  

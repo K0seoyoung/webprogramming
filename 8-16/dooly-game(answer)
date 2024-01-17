@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  
+    <title>Dooly Game</title>
+</head>
+<body>
+    <form> 실습7. 둘리를 잡아라  학번: 202104352 이름: 석민지 </form>
+<br>
+    <div>
+        <span id="scoreLabel">Score:</span>
+        <input id="score" type="text" size="2" value="0" />
+
+        <span id="stepLabel">Step:</span>
+        <input id="step" type="text" size="2" value="1" />
+    </div>
+
+    <div style="width: 100%; height: 100%; position: relative;">
+        <img id="dooly" src="dooly.jpg" width="100px" style="position: absolute; left: 50px; top: 120px;" />
+    </div>
+
+    <script>
+        let score = 0;
+        let step = 1;
+        let directionX = 1;
+        let directionY = 1;
+        let isMoving = true; 
+
+        scoreInput = document.getElementById("score"); 
+         stepInput = document.getElementById("step"); 
+        const dooly = document.getElementById("dooly");
+        
+
+
+        function moveDooly() {
+            if (!isMoving) return; 
+
+            const maxX = window.innerWidth - dooly.width;
+            const maxY = window.innerHeight - dooly.height;
+
+            let currentX = parseInt(dooly.style.left) || 0; //초기화 
+            let currentY = parseInt(dooly.style.top) || 0;
+
+            currentX += step * directionX;
+            currentY += step * directionY;
+
+            if (currentX < 0 || currentX > maxX) {
+                directionX *= -1; 
+            }
+
+            if (currentY < 0 || currentY > maxY) {
+                directionY *= -1; 
+            }
+
+            dooly.style.left = `${currentX}px`;
+            dooly.style.top = `${currentY}px`;
+            
+        }
+
+
+        function updateScoreStep() {
+            scoreInput.value = score;
+            stepInput.value = step;
+        }
+
+        function increaseScoreStep() { //클릭 시 score +10 step *2
+            score += 10; 
+            step *= 2;
+            updateScoreStep();
+        }
+
+        dooly.addEventListener('mousedown', () => {
+            increaseScoreStep();
+        });
+
+        
+        window.onload = function () { 
+            setInterval(() => { 
+                moveDooly();
+            }, 100); // 100msec 주기 
+        }
+
+        window.addEventListener('resize', () => {  
+           //브라우저 창의 크기 변경해도 올바르게 동작 
+            const maxX = window.innerWidth - dooly.width;
+            const maxY = window.innerHeight - dooly.height;
+
+            if (parseInt(dooly.style.left) > maxX) {
+                dooly.style.left = `${maxX}px`;
+            }
+
+            if (parseInt(dooly.style.top) > maxY) {
+                dooly.style.top = `${maxY}px`;
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateScoreStep();
+        });
+
+    </script>
+</body>
+</html>
